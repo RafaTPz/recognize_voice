@@ -4,7 +4,9 @@ import Rotas from './Rotas.jsx'
 
 function App() {
   return (
-kj
+    <BrowserRouter>
+     <Rotas/>
+    </BrowserRouter>
   );
 }
 
