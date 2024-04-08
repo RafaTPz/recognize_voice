@@ -27,7 +27,7 @@ const Home = () => {
                 <AreaVoz>
                     <br /><p>Microfone: {listening ? 'On' : 'off'}</p>
                     {listening && <p>Tempo corrido: {counter} segundos</p>}
-                    <Button onClick={SpeechRecognition.startListening}>Iniciar</Button>
+                    <Button onClick={SpeechRecognition.startListening({language: pt-br})}>Iniciar</Button>
                     <Button onClick={SpeechRecognition.stopListening}>Pausar</Button>
                     <p>{transcript}</p>
                 </AreaVoz>
