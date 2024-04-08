@@ -6,41 +6,29 @@ const Home = () => {
     const {
         transcript,
         listening,
-        resetTranscript,
         browserSupportsSpeechRecognition
     } = useSpeechRecognition();
-
     const [counter, setCounter] = useState(0);
     const [timer, setTimer] = useState(null);
-
     useEffect(() => {
         if (listening) {
             setTimer(setInterval(() => setCounter(prevCounter => prevCounter + 1), 1000));
         } else {
             clearInterval(timer);
         }
-
         return () => clearInterval(timer);
     }, [listening]);
-
-    const resetTranscriptHandler = () => {
-        resetTranscript();
-        setCounter(0);
-    };
-
     if (!browserSupportsSpeechRecognition) {
-        return <span>Browser doesn't support speech recognition.</span>;
+        return <span>O navegador não suporta o reconhecimento de voz.</span>;
     }
-
     return(
         <AreaHome>
             <Container>
                 <AreaVoz>
-                    <br /><p>Microfone: {listening ? 'on' : 'off'}</p>
+                    <br /><p>Microfone: {listening ? 'On' : 'off'}</p>
                     {listening && <p>Tempo corrido: {counter} segundos</p>}
-                    <Button onClick={SpeechRecognition.startListening}>Start</Button>
-                    <Button onClick={SpeechRecognition.stopListening}>Pause</Button>
-                    <Button onClick={resetTranscriptHandler}>Reset</Button>
+                    <Button onClick={SpeechRecognition.startListening}>Iniciar</Button>
+                    <Button onClick={SpeechRecognition.stopListening}>Pausar</Button>
                     <p>{transcript}</p>
                 </AreaVoz>
             </Container>

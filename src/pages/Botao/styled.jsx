@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const AreaHome = styled.div`
+export const AreaBotao = styled.div`
   font-family: Helvetica;
 `;
 export const AreaVoz = styled.div`
@@ -25,9 +25,5 @@ export const Button = styled.button`
   cursor: pointer;
   &:hover {
     background-color: #a00202;
-  }
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
   }
 `;
