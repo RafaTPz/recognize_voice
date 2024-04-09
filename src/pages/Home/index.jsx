@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {AreaHome,AreaVoz,Container,Button} from './styled'
+import { AreaHome, AreaVoz, Container, Button } from './styled'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 
 const Home = () => {
@@ -21,13 +21,13 @@ const Home = () => {
     if (!browserSupportsSpeechRecognition) {
         return <span>O navegador não suporta o reconhecimento de voz.</span>;
     }
-    return(
+    return (
         <AreaHome>
             <Container>
                 <AreaVoz>
                     <br /><p>Microfone: {listening ? 'On' : 'off'}</p>
                     {listening && <p>Tempo corrido: {counter} segundos</p>}
-                    <Button onClick={SpeechRecognition.startListening({language: pt-br})}>Iniciar</Button>
+                    <Button onClick={() => SpeechRecognition.startListening({ language: "pt-br" })}>Iniciar</Button>
                     <Button onClick={SpeechRecognition.stopListening}>Pausar</Button>
                     <p>{transcript}</p>
                 </AreaVoz>
