@@ -8,6 +8,8 @@ export const AreaVoz = styled.div`
   padding: 20px;
   border-radius: 5px;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 `;
 export const Container = styled.div`
   display: flex;
@@ -22,6 +24,7 @@ export const Button = styled.button`
   padding: 10px 20px;
   margin-right: 10px;
   border-radius: 5px;
+  margin-bottom:1rem;
   cursor: pointer;
   &:hover {
     background-color: #a00202;
